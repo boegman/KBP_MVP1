@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="kbp-teamc" content="">
+    <title>Travaar | Web App</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/travaar.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body ng-app="travaar">
+
+<section ng-view></section>
+
+
+
+<!-- Libraries -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-resource.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCbe7vZygsRsrqwAcuXBxClFHDlo40GMGQ",
+    authDomain: "travaar-48438.firebaseapp.com",
+    databaseURL: "https://travaar-48438.firebaseio.com",
+    storageBucket: "travaar-48438.appspot.com",
+    messagingSenderId: "499630772943"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="app.module.js"></script>
+<script type="text/javascript" src="app.config.js"></script>
+<script type="text/javascript" src="dashboard/dashboard-view.client.module.js"></script>
+<script type="text/javascript" src="dashboard/dashboard-view.client.component.js"></script>
+<script type="text/javascript" src="products/products.client.module.js"></script>
+<script type="text/javascript" src="products/products.client.controller.js"></script>
+
+
+</body>
+</html>

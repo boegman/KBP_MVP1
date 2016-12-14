@@ -1,0 +1,19 @@
+{
+  "name": "travaar",
+  "version": "1.0.0",
+  "description": "Platform for tourists to buy locally produced curios",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "local",
+    "curios",
+    "hand-made",
+    "crotchet",
+    "wooden",
+    "beads"
+  ],
+  "author": "kbp-teamc",
+  "license": "ISC"
+}

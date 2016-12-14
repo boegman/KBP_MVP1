@@ -1,0 +1,81 @@
+<div class=container>
+    <section id="logo">
+        <a href="#">
+            <img class="" src="./img/travaar-logo-sm.jpg" alt="">
+        </a>
+    </section>
+</div>
+
+
+
+<section id="product">
+    <div ng-controller="productsCtrl">
+        <div ng-init="findOneProduct()">
+            <div class="container">
+
+
+
+                <div class=row>
+                    <div class="col-md-6 col-md-offset-3">
+
+                        <h2 >{{product.name}}</h2>
+                        <a href="" class="thumbnail box-shadow">
+                            <img class="" src="{{product.imageUrl}}" alt="...">
+                        </a>
+                        <hr />
+                        <h3>
+                            {{product.description}}
+                        </h3>
+                        <h4>
+                            Product of {{product.origin}}
+                        </h4>
+                        <h4>
+                            Price: {{product.price | currency : 'R '}}
+                        </h4>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-2">
+                                <p><a class="btn btn-primary btn-lg">Buy</a></p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><a class="btn btn-warning btn-lg">Contact Me</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; Travaar 2016</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="">Privacy Policy</a>
+                    </li>
+                    <li><a href="">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
