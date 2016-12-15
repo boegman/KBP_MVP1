@@ -59,19 +59,22 @@
       "supplierRef": "GRIP&GO-500ML"
     }, 
     {
-      "costPrice": 800, 
-      "detailedDescription": "", 
-      "displayPrice": 899, 
+      "costPrice": 79, 
+      "detailedDescription": "A unique purse that capture the distinct and vibrant aesthetic of the African sub-continent.", 
+      "displayPrice": 125, 
       "image": [
         {
-          "url": "./img/handbag.jpg"
+          "url": "./img/products/prod-4-1.jpg"
+        }, 
+        {
+          "url": "./img/products/prod-4-2.jpg"
         }
       ], 
       "origin": "South Africa", 
       "prodId": 4, 
       "quantity": 10, 
-      "shortDescription": "Hand Bag", 
-      "supplierRef": ""
+      "shortDescription": "Stabi Clutch Bag", 
+      "supplierRef": "BWP022S"
     }, 
     {
       "costPrice": 500, 
