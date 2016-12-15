@@ -10,7 +10,7 @@ angular.
           templateUrl: './dashboard/dashboard-view.template.html'
 
         }).
-        when('/product/:productId', {
+        when('/product/:hotelId/:productId', {
             //@TODO Fix this to use angular component
             templateUrl: './products/view-product.template.html'
         }).
