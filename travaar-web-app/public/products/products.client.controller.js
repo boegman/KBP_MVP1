@@ -1,5 +1,5 @@
 angular.module('products').
-    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray',function( $scope, $routeParams, $location, $firebaseArray){
+    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject',function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject){
         var self = this;
 
         var hotels_db = [
@@ -141,12 +141,12 @@ angular.module('products').
 
         };
 
-        $scope.getProducts = function(){
-            var hotel_index = 0;
-            $scope.hotel = hotels_db[hotel_index];
-        };
-
-        $scope.getProducts();
+        // $scope.getProducts = function(){
+        //     var hotel_index = 0;
+        //     $scope.hotel = hotels_db[hotel_index];
+        // };
+        //
+        // $scope.getProducts();
 
         //FIREBASE
         var ref = firebase.database().ref().child("hotels");
@@ -156,14 +156,45 @@ angular.module('products').
 
         $scope.addHotel = function() {
            $scope.hotels.$add({
-               name: 'Prenevin the legend!',
-               address: '2 De Korte',
-               contact_number: '011 12111 11 '
+             name: "Once in Joburg",
+             address: '2 Something De Korte, Braamfontein ',
+             contact_number: '011 1841516',
+             products: [
+                 {
+                     name: 'Green Baby Sandstone Elephant',
+                     imageUrl: './img/backpack-md.jpg',
+                     price: 1500,
+                     description: 'A beautiful green baby sandstone elephant',
+                     origin: 'South Africa',
+                     quantity: 5
+                 }
+               ]
            });
+
            console.log("Data added!");
        };
 
+      //  $scope.addHotel();
+
+      //Get hotel products
+      $scope.hotel = {};
+      $scope.getHotel = function(){
+        var hotel_index = '-KZ1Xi-GclC3Xy6nkYEs';
+      var hotel_ref = firebase.database().ref().child("hotels/"+hotel_index);
+        var hotelObj = $firebaseObject(hotel_ref);
+        hotelObj.$loaded()
+            .then(function(){
+                //success callback
+                $scope.hotel = hotelObj;
+                  console.log($scope.hotel);
+            })
+            .catch(function(error){
+                //Failure callback
+                console.log(error);
+            });
+
+      };
+
+      $scope.getHotel();
+
     }]);
-
-
-  
