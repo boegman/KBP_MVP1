@@ -70,26 +70,29 @@
           "url": "./img/products/prod-4-2.jpg"
         }
       ], 
-      "origin": "South Africa", 
+      "origin": "Cape Town, South Africa", 
       "prodId": 4, 
       "quantity": 10, 
       "shortDescription": "Stabi Clutch Bag", 
       "supplierRef": "BWP022S"
     }, 
     {
-      "costPrice": 500, 
-      "detailedDescription": "A colorful necklace made of beads", 
+      "costPrice": 359, 
+      "detailedDescription": "A unique rucksack that capture the distinct and vibrant aesthetic of the African sub-continent.", 
       "displayPrice": 585, 
       "image": [
         {
-          "url": "./img/beads-necklace-md.jpg"
+          "url": "./img/products/prod-5-1.jpg"
+        }, 
+        {
+          "url": "./img/products/prod-5-2.jpg"
         }
       ], 
-      "origin": "South Africa", 
+      "origin": "Cape Town, South Africa", 
       "prodId": 5, 
       "quantity": 10, 
-      "shortDescription": "Colorful necklace", 
-      "supplierRef": ""
+      "shortDescription": "Ashanti backpack", 
+      "supplierRef": "BWP024"
     }
   ]
 }
