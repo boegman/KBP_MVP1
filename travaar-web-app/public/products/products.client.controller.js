@@ -1,27 +1,35 @@
 angular.module('products').
     controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject',function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject){
         var self = this;
-        
+        $scope.hotel_Id = '-KZ1tjKMBrimWj6k1pHb';
+
+        //Get hotel products
+        $scope.hotel = {};
+        $scope.getHotel = function(hotelId){
+            var hotel_ref = firebase.database().ref().child("hotels/"+hotelId);
+            var hotelObj = $firebaseObject(hotel_ref);
+            hotelObj.$loaded()
+              .then(function(){
+                  //success callback
+                  $scope.hotel = hotelObj;
+                //   console.log(hotelObj.$keyAt($scope.hotel.products));
+              })
+              .catch(function(error){
+                  //Failure callback
+                  console.log(error);
+              });
+
+        };
+
+        $scope.getHotel($scope.hotel_Id);
+
         //Function run by `ng-Init` on the products template once the page has loaded
         //Retreives the `productId` from url and loads product located at that index in the inventory
-        $scope.findOneProduct = function(){
+        $scope.findOneProduct = function(hotelId, productId){
             self.prodId = $routeParams.productId;
             $scope.product = self.products[self.prodId];
 
         };
-
-        // $scope.getProducts = function(){
-        //     var hotel_index = 0;
-        //     $scope.hotel = hotels_db[hotel_index];
-        // };
-        //
-        // $scope.getProducts();
-
-        //FIREBASE
-        var ref = firebase.database().ref().child("hotels");
-
-        // create a synchronized array
-        $scope.hotels = $firebaseArray(ref);
 
         $scope.addHotel = function() {
            $scope.hotels.$add({
@@ -139,24 +147,6 @@ angular.module('products').
 
       //  $scope.addHotel_2();
 
-      //Get hotel products
-      $scope.hotel = {};
-      $scope.getHotel = function(){
-        var hotel_index = '-KZ1tjKMBrimWj6k1pHb';
-      var hotel_ref = firebase.database().ref().child("hotels/"+hotel_index);
-        var hotelObj = $firebaseObject(hotel_ref);
-        hotelObj.$loaded()
-            .then(function(){
-                //success callback
-                $scope.hotel = hotelObj;
-            })
-            .catch(function(error){
-                //Failure callback
-                console.log(error);
-            });
 
-      };
-
-      $scope.getHotel();
 
     }]);
