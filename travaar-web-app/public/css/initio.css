@@ -225,7 +225,7 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(../initio/images/bg_head.jpg) top center;
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(../img/bg_beads.jpg) top center;
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
