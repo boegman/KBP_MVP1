@@ -1,5 +1,5 @@
 angular.module('products').
-    controller('productsCtrl',['$scope','$routeParams','$location', '$firebaseArray',function($firebaseArray, $scope, $routeParams, $location){
+    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject',function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject){
         var self = this;
 
         var hotels_db = [
@@ -141,56 +141,59 @@ angular.module('products').
 
         };
 
-        $scope.getProducts = function(){
-            var hotel_index = 0;
-            $scope.hotel = hotels_db[hotel_index];
-        };
+        // $scope.getProducts = function(){
+        //     var hotel_index = 0;
+        //     $scope.hotel = hotels_db[hotel_index];
+        // };
+        //
+        // $scope.getProducts();
 
-        $scope.getProducts();
-
-        //Firebase
-    //     var ref = firebase.database().ref().child("hotels");
-    //
-    //     // create a synchronized array
-    //     $scope.hotels = $firebaseArray(ref);
-    // //
-    // //    // add new items to the array
-    // //    // the message is automatically added to our Firebase database!
-    //     $scope.addHotel = function() {
-    //         $scope.hotels.$add({
-    //             name: 'Once in Joburg',
-    //             address: '2 De Korte',
-    //             contact_number: '011 134 2323'
-    //         });
-    //     };
-
-        // $scope.addHotel();
-
-
-    }]);
-
-
-    angular.module('products').controller("SampleCtrl", function($scope, $firebaseArray) {
-
+        //FIREBASE
         var ref = firebase.database().ref().child("hotels");
 
         // create a synchronized array
         $scope.hotels = $firebaseArray(ref);
-    //
-    //    // add new items to the array
-    //    // the message is automatically added to our Firebase database!
 
-    $scope.addHotel = function() {
+        $scope.addHotel = function() {
            $scope.hotels.$add({
-               name: 'Once in Joburg',
-               address: '2 De Korte',
-               contact_number: '011 134 2323'
+             name: "Once in Joburg",
+             address: '2 Something De Korte, Braamfontein ',
+             contact_number: '011 1841516',
+             products: [
+                 {
+                     name: 'Green Baby Sandstone Elephant',
+                     imageUrl: './img/backpack-md.jpg',
+                     price: 1500,
+                     description: 'A beautiful green baby sandstone elephant',
+                     origin: 'South Africa',
+                     quantity: 5
+                 }
+               ]
            });
+
            console.log("Data added!");
        };
 
+      //  $scope.addHotel();
 
+      //Get hotel products
+      $scope.hotel = {};
+      $scope.getHotel = function(){
+        var hotel_index = '-KZ1Xi-GclC3Xy6nkYEs';
+      var hotel_ref = firebase.database().ref().child("hotels/"+hotel_index);
+        var hotelObj = $firebaseObject(hotel_ref);
+        hotelObj.$loaded()
+            .then(function(){
+                //success callback
+                $scope.hotel = hotelObj;
+            })
+            .catch(function(error){
+                //Failure callback
+                console.log(error);
+            });
 
-        $scope.addHotel();
+      };
 
-});
+      $scope.getHotel();
+
+    }]);
