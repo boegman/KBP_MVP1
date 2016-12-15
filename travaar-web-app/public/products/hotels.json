@@ -8,6 +8,14 @@
       "prodId": 1,
       "shortDescription": "BADJA FITTED CAP", 
       "detailedDescription": "100% Cotton, Plastic peak, Fusing Hand Made in South Africa", 
+      "image": [
+        {
+          "url": "./img/products/prod-1-1.jpg"
+        }, 
+        {
+          "url": "./img/products/prod-1-2.jpg"
+        }
+      ], 
       "costPrice": 200,
       "displayPrice": 340, 
       "quantity": 10,
