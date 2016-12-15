@@ -1,19 +1,71 @@
-<div class=container>
-    <section id="logo">
-        <a href="#">
-            <img class="" src="./img/travaar-logo-sm.jpg" alt="">
-        </a>
-    </section>
+<main id="main">
+    <div ng-controller="productsCtrl">
+        <div ng-init="findOneProduct()">
+	<div class="container">
+
+		<div class="row topspace">
+
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">{{product.name}}</h1>
+				</header>
+
+				<p><img src="{{product.imageUrl}}" alt=""></p>
+
+				<p>{{product.description}}</p>
+				<h3>Necessitatibus</h3>
+				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
+				<blockquote>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</blockquote>
+				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus!</li>
+					<li>Laboriosam, aliquam totam asperiores nam velit voluptatum non quidem.</li>
+					<li>Voluptatem, libero quia voluptatum ab modi facere dolore assumenda?</li>
+					<li>Expedita, officia tenetur doloremque nulla temporibus ab voluptates adipisci.</li>
+					<li>Nostrum, nesciunt, inventore amet temporibus officia perferendis doloremque nulla.</li>
+					<li>Dolorum, ex earum maiores perspiciatis modi sequi odit mollitia.</li>
+				</ul>
+
+			</article>
+			<!-- /Article -->
+
+			<!-- Sidebar -->
+			<aside class="col-md-4 sidebar sidebar-left">
+
+				<div class="widget">
+					<h4>Country of Origin</h4>
+					<p>{{product.origin}}</p>
+				</div>
+                <div class="widget">
+					<h4>Price</h4>
+					<p>{{product.price | currency: 'R '}}</p>
+				</div>
+				<div class="widget">
+					<h4>Lorem ipsum dolor sit</h4>
+					<ul>
+						<li><a href="">Lorem ipsum </a>dolor sit amet.</li>
+						<li>Nostrum, dolores labore tempore error.</li>
+						<li>Qui esse impedit vitae repellat.</li>
+						<li>Aliquam, laborum corporis molestiae nihil.</li>
+						<li>Voluptate, labore non adipisci nihil!</li>
+					</ul>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
 </div>
+</div>
+</main>
 
 
-
-<section id="product">
+<!-- <section id="product">
     <div ng-controller="productsCtrl">
         <div ng-init="findOneProduct()">
             <div class="container">
-
-
 
                 <div class=row>
                     <div class="col-md-6 col-md-offset-3">
@@ -48,34 +100,4 @@
         </div>
     </div>
 
-</section>
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Travaar 2016</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li><a href="">Privacy Policy</a>
-                    </li>
-                    <li><a href="">Terms of Use</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+</section> -->
