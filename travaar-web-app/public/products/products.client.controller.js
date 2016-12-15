@@ -186,7 +186,6 @@ angular.module('products').
             .then(function(){
                 //success callback
                 $scope.hotel = hotelObj;
-                  console.log($scope.hotel);
             })
             .catch(function(error){
                 //Failure callback
