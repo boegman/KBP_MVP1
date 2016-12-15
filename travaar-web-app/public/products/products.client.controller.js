@@ -1,5 +1,5 @@
 angular.module('products').
-    controller('productsCtrl',['$scope','$routeParams','$location', '$firebaseArray',function($firebaseArray, $scope, $routeParams, $location){
+    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray',function( $scope, $routeParams, $location, $firebaseArray){
         var self = this;
 
         var hotels_db = [
@@ -148,49 +148,22 @@ angular.module('products').
 
         $scope.getProducts();
 
-        //Firebase
-    //     var ref = firebase.database().ref().child("hotels");
-    //
-    //     // create a synchronized array
-    //     $scope.hotels = $firebaseArray(ref);
-    // //
-    // //    // add new items to the array
-    // //    // the message is automatically added to our Firebase database!
-    //     $scope.addHotel = function() {
-    //         $scope.hotels.$add({
-    //             name: 'Once in Joburg',
-    //             address: '2 De Korte',
-    //             contact_number: '011 134 2323'
-    //         });
-    //     };
-
-        // $scope.addHotel();
-
-
-    }]);
-
-
-    angular.module('products').controller("SampleCtrl", function($scope, $firebaseArray) {
-
+        //FIREBASE
         var ref = firebase.database().ref().child("hotels");
 
         // create a synchronized array
         $scope.hotels = $firebaseArray(ref);
-    //
-    //    // add new items to the array
-    //    // the message is automatically added to our Firebase database!
 
-    $scope.addHotel = function() {
+        $scope.addHotel = function() {
            $scope.hotels.$add({
-               name: 'Once in Joburg',
+               name: 'Prenevin the legend!',
                address: '2 De Korte',
-               contact_number: '011 134 2323'
+               contact_number: '011 12111 11 '
            });
            console.log("Data added!");
        };
 
+    }]);
 
 
-        $scope.addHotel();
-
-});
+  
