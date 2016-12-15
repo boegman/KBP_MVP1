@@ -5,9 +5,9 @@
   "name": "Once in Joburg", 
   "products": [
     {
-      "prodId": 1,
-      "shortDescription": "BADJA FITTED CAP", 
+      "costPrice": 200, 
       "detailedDescription": "100% Cotton, Plastic peak, Fusing Hand Made in South Africa", 
+      "displayPrice": 340, 
       "image": [
         {
           "url": "./img/products/prod-1-1.jpg"
@@ -16,16 +16,16 @@
           "url": "./img/products/prod-1-2.jpg"
         }
       ], 
-      "costPrice": 200,
-      "displayPrice": 340, 
-      "quantity": 10,
-      "origin": "Cape Town, South Africa",
+      "origin": "Cape Town, South Africa", 
+      "prodId": 1, 
+      "quantity": 10, 
+      "shortDescription": "BADJA FITTED CAP", 
       "supplierRef": "FC_BADJA"
     }, 
     {
-      "prodId": 2,
-      "shortDescription": "Makulu Jumbo bag", 
+      "costPrice": 450, 
       "detailedDescription": "Our largest bag makes for an ideal day bag.  The isiZulu word makulu means 'the biggest'.", 
+      "displayPrice": 640, 
       "image": [
         {
           "url": "./img/products/prod-2-1.jpg"
@@ -34,55 +34,58 @@
           "url": "./img/products/prod-2-2.jpg"
         }
       ], 
-      "costPrice": 450,
-      "displayPrice": 640,
-      "quantity": 10,
-      "origin": "Cape Town, South Africa",
+      "origin": "Cape Town, South Africa", 
+      "prodId": 2, 
+      "quantity": 10, 
+      "shortDescription": "Makulu Jumbo bag", 
       "supplierRef": "MakuluJumbo"
     }, 
     {
-      "prodId": 3,
-      "shortDescription": "Doorstop", 
-      "detailedDescription": "", 
+      "costPrice": 30, 
+      "detailedDescription": "No other packaging form matches the ability of glass to extend shelf life and retain product integrity, taste and flavour.  500ml.", 
+      "displayPrice": 59, 
       "image": [
         {
-          "url": "./img/doorstop.jpg"
+          "url": "./img/products/prod-3-1.jpg"
+        }, 
+        {
+          "url": "./img/products/prod-3-2.jpg"
         }
       ], 
-      "costPrice": 200,
-      "displayPrice": 250,
-      "quantity": 10,
-      "origin": "South Africa",
-      "supplierRef": ""
+      "origin": "South Africa", 
+      "prodId": 3, 
+      "quantity": 10, 
+      "shortDescription": "CONSOL GRIP & GO\u2122 (500ML)", 
+      "supplierRef": "GRIP&GO-500ML"
     }, 
     {
-      "prodId": 4,
-      "shortDescription": "Hand Bag", 
+      "costPrice": 800, 
       "detailedDescription": "", 
+      "displayPrice": 899, 
       "image": [
         {
           "url": "./img/handbag.jpg"
         }
       ], 
-      "costPrice": 800,
-      "displayPrice": 899,
-      "quantity": 10,
-      "origin": "South Africa",
+      "origin": "South Africa", 
+      "prodId": 4, 
+      "quantity": 10, 
+      "shortDescription": "Hand Bag", 
       "supplierRef": ""
     }, 
     {
-      "prodId": 5,
-      "shortDescription": "Colorful necklace", 
+      "costPrice": 500, 
       "detailedDescription": "A colorful necklace made of beads", 
+      "displayPrice": 585, 
       "image": [
         {
           "url": "./img/beads-necklace-md.jpg"
         }
       ], 
-      "costPrice": 500,
-      "displayPrice": 585,
-      "quantity": 10,
-      "origin": "South Africa",
+      "origin": "South Africa", 
+      "prodId": 5, 
+      "quantity": 10, 
+      "shortDescription": "Colorful necklace", 
       "supplierRef": ""
     }
   ]
