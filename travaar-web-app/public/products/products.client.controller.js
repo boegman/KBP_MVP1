@@ -1,8 +1,6 @@
 angular.module('products').
     controller('productsCtrl',['$scope','$routeParams','$location', function($scope, $routeParams, $location){
         var self = this;
-        $scope.test = "Changed Test variable here!";
-        console.log($scope.test);
 
         self.products = [
             {
