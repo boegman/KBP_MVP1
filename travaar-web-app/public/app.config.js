@@ -6,7 +6,9 @@ angular.
 
       $routeProvider.
         when('/', {
-          template: '<dashboard-view><dashboard-view>'
+          // template: '<dashboard-view><dashboard-view>'
+          templateUrl: './dashboard/dashboard-view.template.html'
+
         }).
         when('/product/:productId', {
             //@TODO Fix this to use angular component

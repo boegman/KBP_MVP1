@@ -1,1 +1,1 @@
-angular.module('products',[]);
+angular.module('products',['firebase']);
