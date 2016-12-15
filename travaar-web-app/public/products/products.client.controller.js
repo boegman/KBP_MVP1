@@ -2,6 +2,7 @@ angular.module('products').
     controller('productsCtrl',['$scope','$routeParams','$location', function($scope, $routeParams, $location){
         var self = this;
 
+        //Object that stores our products inventory
         self.products = [
             {
                 name: 'Green Baby Sandstone Elephant',
@@ -40,12 +41,12 @@ angular.module('products').
             }
         ];
 
-        self.findOneProduct = function(){
+        //Function run by `ng-Init` on the products template once the page has loaded
+        //Retreives the `productId` from url and loads product located at that index in the inventory
+        $scope.findOneProduct = function(){
             self.prodId = $routeParams.productId;
             $scope.product = self.products[self.prodId];
 
         };
-
-        self.findOneProduct();
 
     }]);
