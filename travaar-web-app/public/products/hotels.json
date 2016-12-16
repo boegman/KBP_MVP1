@@ -93,7 +93,7 @@
       "quantity": 10, 
       "shortDescription": "Ashanti backpack", 
       "supplierRef": "BWP024"
-    }
+    }, 
     {
       "costPrice": 89, 
       "detailedDescription": "A unique doorstop that capture the distinct and vibrant aesthetic of the African sub-continent.  Light to take with you and once you reach your destination, fill it with sand or something heavy.", 
@@ -111,6 +111,36 @@
       "quantity": 10, 
       "shortDescription": "Ashanti doorstop", 
       "supplierRef": "BWP001FP"
+    }, 
+    {
+      "costPrice": 59, 
+      "detailedDescription": "Colorful african themed scarf.", 
+      "displayPrice": 120, 
+      "image": [
+        {
+          "url": "./img/products/prod-7-1.jpg"
+        }
+      ], 
+      "origin": "China", 
+      "prodId": 7, 
+      "quantity": 10, 
+      "shortDescription": "African themed scarf", 
+      "supplierRef": "ChinaMallScarf"
+    }, 
+    {
+      "costPrice": 69, 
+      "detailedDescription": "Colorful multistrand African necklace.", 
+      "displayPrice": 140, 
+      "image": [
+        {
+          "url": "./img/products/prod-8-1.jpg"
+        }
+      ], 
+      "origin": "China", 
+      "prodId": 7, 
+      "quantity": 10, 
+      "shortDescription": "African themed necklace", 
+      "supplierRef": "ChinaMallNecklace"
     }
   ]
 }
