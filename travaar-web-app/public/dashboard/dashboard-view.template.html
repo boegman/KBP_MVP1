@@ -19,10 +19,11 @@
 			<br/>
 			<span> Contact Number: {{hotel.contact_number}}</span>
 			<h2 class="section-title"><span>Catalogue</span></h2>
+			 Search: <input ng-model="$ctrl.productsFilter" />
 
 			<div class="thumbnails recentworks row">
 
-				<div ng-repeat="product in hotel.products">
+				<div ng-repeat="product in hotel.products | filter: $ctrl.productsFilter">
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<a class="thumbnail" href="/#!/product/{{hotel_Id}}/{{product.prodId}}">
 								<span class="img">
