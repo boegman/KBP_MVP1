@@ -137,7 +137,7 @@
         }
       ], 
       "origin": "China", 
-      "prodId": 7, 
+      "prodId": 8, 
       "quantity": 10, 
       "shortDescription": "African themed necklace", 
       "supplierRef": "ChinaMallNecklace"
@@ -148,11 +148,11 @@
       "displayPrice": 200, 
       "image": [
         {
-          "url": "./img/products/prod-8-1.jpg"
+          "url": "./img/products/prod-9-1.jpg"
         }
       ], 
       "origin": "Cape Town, South Africa", 
-      "prodId": 8, 
+      "prodId": 9, 
       "quantity": 10, 
       "shortDescription": "Ashanti limited edition purse", 
       "supplierRef": "ChinaMallNecklace"
