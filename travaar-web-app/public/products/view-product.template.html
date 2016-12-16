@@ -1,6 +1,6 @@
 <main id="main">
     <div ng-controller="productsCtrl">
-        <div >
+        <div ng-init="findOneProduct()">
 	<div class="container">
 
 		<div class="row topspace">
@@ -8,12 +8,12 @@
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">{{product.name}}</h1>
+					<h1 class="page-title">{{product.shortDescription}}</h1>
 				</header>
 
 				<p><img src="{{product.image[0].url}}" alt=""></p>
 
-				<p>{{product.description}}</p>
+				<p>{{product.detailedDescription}}</p>
 				<h3>Necessitatibus</h3>
 				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
 				<blockquote>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</blockquote>
@@ -34,12 +34,20 @@
 			<aside class="col-md-4 sidebar sidebar-left">
 
 				<div class="widget">
-					<h4>Country of Origin</h4>
+					<h4>Origin</h4>
 					<p>{{product.origin}}</p>
 				</div>
                 <div class="widget">
 					<h4>Price</h4>
-					<p>{{product.price | currency: 'R '}}</p>
+                    <span>Cost: {{product.costPrice | currency: 'R '}}</span>
+                    <br />
+                    <br />
+					<span>Display: {{product.displayPrice | currency: 'R '}}</span>
+                    <br />
+				</div>
+                <div class="widget">
+					<h4>Quantity</h4>
+					<p>{{product.quantity}}</p>
 				</div>
 				<div class="widget">
 					<h4>Lorem ipsum dolor sit</h4>

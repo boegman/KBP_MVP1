@@ -1,11 +1,11 @@
 angular.module('products').
     controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject',function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject){
-        var self = this;
+
         $scope.hotel_Id = '-KZ1tjKMBrimWj6k1pHb';
 
         //Get hotel products
         $scope.hotel = {};
-        $scope.getHotel = function(hotelId){
+        $scope.getHotelProducts = function(hotelId){
             var hotel_ref = firebase.database().ref().child("hotels/"+hotelId);
 
             var hotelObj = $firebaseObject(hotel_ref);
@@ -20,54 +20,32 @@ angular.module('products').
                   console.log(error);
               });
 
-            // var hotelArr = $firebaseArray(hotel_ref);
-            // hotelArr.$loaded()
-            //   .then(function(){
-            //       //success callback
-            //       $scope.hotel = hotelArr.$getRecord('products');
-            //     // console.log(hotelArr.$keyAt($scope.hotel.products));
-            //     console.log(hotelArr.$getRecord('products'));
-            //   })
-            //   .catch(function(error){
-            //       //Failure callback
-            //       console.log(error);
-            //   });
-
-
-
         };
 
-        $scope.getHotel($scope.hotel_Id);
+        // $scope.getHotelProducts($scope.hotel_Id);
 
         //Function run by `ng-Init` on the products template once the page has loaded
         //Retreives the `productId` from url and loads product located at that index in the inventory
-        $scope.findOneProduct = function(hotelId, productId){
-            self.prodId = $routeParams.productId;
-            $scope.product = self.products[self.prodId];
+        $scope.product = {};
+        $scope.findOneProduct = function(){
+            var hotelId = $routeParams.hotelId;
+            var prodId = $routeParams.productId;
+            var product_ref = firebase.database().ref().child("hotels/"+hotelId+"/products/"+prodId);
 
+            var productArr = $firebaseObject(product_ref);
+            productArr.$loaded()
+              .then(function(){
+                  //success callback
+                  $scope.product = productArr;
+              })
+              .catch(function(error){
+                  //Failure callback
+                  console.log(error);
+              });
         };
 
-        $scope.addHotel = function() {
-           $scope.hotels.$add({
-             name: "Once in Joburg",
-             address: '2 Something De Korte, Braamfontein ',
-             contact_number: '011 1841516',
-             products: [
-                 {
-                     name: 'Green Baby Sandstone Elephant',
-                     imageUrl: './img/backpack-md.jpg',
-                     price: 1500,
-                     description: 'A beautiful green baby sandstone elephant',
-                     origin: 'South Africa',
-                     quantity: 5
-                 }
-               ]
-           });
 
-           console.log("Data added!");
-       };
-
-       $scope.addHotel_2 = function() {
+       $scope.addHotel = function() {
           $scope.hotels.$add({
             "address": "90 De Korte St, Johannesburg, 2000, South Africa",
             "contact_number": "011 1841516",
@@ -75,7 +53,7 @@ angular.module('products').
             "name": "Once in Joburg",
             "products": [
               {
-                "prodId": 1,
+                "prodId": 0,
                 "shortDescription": "BADJA FITTED CAP",
                 "detailedDescription": "100% Cotton, Plastic peak, Fusing Hand Made in South Africa",
                 "image": [
@@ -93,7 +71,7 @@ angular.module('products').
                 "supplierRef": "FC_BADJA"
               },
               {
-                "prodId": 2,
+                "prodId": 1,
                 "shortDescription": "Makulu Jumbo bag",
                 "detailedDescription": "Our largest bag makes for an ideal day bag.  The isiZulu word makulu means 'the biggest'.",
                 "image": [
@@ -111,7 +89,7 @@ angular.module('products').
                 "supplierRef": "MakuluJumbo"
               },
               {
-                "prodId": 3,
+                "prodId": 2,
                 "shortDescription": "Doorstop",
                 "detailedDescription": "",
                 "image": [
@@ -126,7 +104,7 @@ angular.module('products').
                 "supplierRef": ""
               },
               {
-                "prodId": 4,
+                "prodId": 3,
                 "shortDescription": "Hand Bag",
                 "detailedDescription": "",
                 "image": [
@@ -141,7 +119,7 @@ angular.module('products').
                 "supplierRef": ""
               },
               {
-                "prodId": 5,
+                "prodId": 4,
                 "shortDescription": "Colorful necklace",
                 "detailedDescription": "A colorful necklace made of beads",
                 "image": [
@@ -161,7 +139,7 @@ angular.module('products').
           console.log("Data added!");
       };
 
-      //  $scope.addHotel_2();
+      //  $scope.addHotel();
 
 
 
