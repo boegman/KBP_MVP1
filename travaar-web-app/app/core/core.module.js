@@ -1,1 +1,1 @@
-angular.module('core',[core.email]);
+angular.module('core',['core.email']);
