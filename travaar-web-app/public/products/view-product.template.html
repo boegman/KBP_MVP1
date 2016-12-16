@@ -81,7 +81,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="numberOfItems">Number of Items:</label>
-                    <input type="number" ng-model="quantity" id="numberOfItems"/>
+                    <input type="number" ng-model="quantity" id="numberOfItems" min="1" max="{{product.quantity}}"/>
                 </div>
 
             </div>

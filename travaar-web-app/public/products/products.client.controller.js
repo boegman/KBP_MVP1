@@ -53,7 +53,7 @@ angular.module('products').
 
         $scope.quantity = 1;
         $scope.confirmYes = function(selected_qty){
-            
+
             $scope.product['quantity'] -= selected_qty;
             $scope.product.$save('quantity').then(function() {
                 alert('Purchase completed successfully!');
@@ -62,8 +62,6 @@ angular.module('products').
             .catch(function(error){
                 console.log(error);
             });
-
-
 
         };
 
@@ -164,7 +162,5 @@ angular.module('products').
       };
 
       //  $scope.addHotel();
-
-
 
     }]);
