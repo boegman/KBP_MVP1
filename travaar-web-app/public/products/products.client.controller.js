@@ -44,6 +44,30 @@ angular.module('products').
               });
         };
 
+        // Product Modal
+        $scope.modal_product = {};
+        $scope.openProduct = function(paramProduct){
+            $scope.modal_product = paramProduct;
+            $('#productModal').modal('show');
+        };
+
+        $scope.quantity = 1;
+        $scope.confirmYes = function(selected_qty){
+            
+            $scope.product['quantity'] -= selected_qty;
+            $scope.product.$save('quantity').then(function() {
+                alert('Purchase completed successfully!');
+                $('#productModal').modal('hide');
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+
+
+
+        };
+
+
 
        $scope.addHotel = function() {
           $scope.hotels.$add({
