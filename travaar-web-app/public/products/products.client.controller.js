@@ -7,6 +7,7 @@ angular.module('products').
         $scope.hotel = {};
         $scope.getHotel = function(hotelId){
             var hotel_ref = firebase.database().ref().child("hotels/"+hotelId);
+
             var hotelObj = $firebaseObject(hotel_ref);
             hotelObj.$loaded()
               .then(function(){
@@ -18,6 +19,21 @@ angular.module('products').
                   //Failure callback
                   console.log(error);
               });
+
+            // var hotelArr = $firebaseArray(hotel_ref);
+            // hotelArr.$loaded()
+            //   .then(function(){
+            //       //success callback
+            //       $scope.hotel = hotelArr.$getRecord('products');
+            //     // console.log(hotelArr.$keyAt($scope.hotel.products));
+            //     console.log(hotelArr.$getRecord('products'));
+            //   })
+            //   .catch(function(error){
+            //       //Failure callback
+            //       console.log(error);
+            //   });
+
+
 
         };
 

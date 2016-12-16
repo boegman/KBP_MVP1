@@ -22,14 +22,14 @@
 
 				<div ng-repeat="product in hotel.products">
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<a class="thumbnail" href="sidebar-right.html">
+							<a class="thumbnail" href="/#!/product/{{hotel_Id}}/{{product.prodId}}">
 								<span class="img">
 									<img src="{{product.image[0].url}}" alt="{{product.shortDescription}}">
 									<span class="cover"><span class="more">See details &rarr;</span></span>
 								</span>
 								<span class="title">{{product.shortDescription}}</span>
 							</a>
-							<span class="details"><a href="/#!/product/0">View</a> </span>
+							<span class="details"><a href="/#!/product/{{hotel_Id}}/{{product.prodId}}">View</a> </span>
 							<h4></h4>
 							<p></p>
 						</div>
