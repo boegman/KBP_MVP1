@@ -44,22 +44,45 @@ angular.module('products').
               });
         };
 
-        // Product Modal
-        $scope.modal_product = {};
-        $scope.openProduct = function(paramProduct){
-            $scope.modal_product = paramProduct;
-            $('#productModal').modal('show');
+        // Product Sell Modal
+        $scope.sellProduct_modal = {};
+        $scope.sellProduct = function(paramProduct){
+            $scope.sellProduct_modal = paramProduct;
+            $('#sellProductModal').modal('show');
         };
 
-        $scope.quantity = 1;
-        $scope.confirmYes = function(selected_qty){
+        $scope.quantitySell = 1;
+        $scope.confirmYesSell = function(selected_qty){
 
             $scope.product['quantity'] -= selected_qty;
             $scope.product.$save('quantity').then(function() {
                 alert('Purchase completed successfully!');
-                $('#productModal').modal('hide');
+                $('#sellProductModal').modal('hide');
             })
             .catch(function(error){
+                alert(error);
+                console.log(error);
+            });
+
+        };
+
+        // Product Buy Modal
+        $scope.buyProduct_modal = {};
+        $scope.buyProduct = function(paramProduct){
+            $scope.buyProduct_modal = paramProduct;
+            $('#buyProductModal').modal('show');
+        };
+
+        $scope.quantityBuy = 1;
+        $scope.confirmYesBuy = function(selected_qty){
+
+            $scope.product['quantity'] += selected_qty;
+            $scope.product.$save('quantity').then(function() {
+                alert('Product added successfully!');
+                $('#buyProductModal').modal('hide');
+            })
+            .catch(function(error){
+                alert(error);
                 console.log(error);
             });
 
