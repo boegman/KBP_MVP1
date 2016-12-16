@@ -14,6 +14,10 @@ angular.
             //@TODO Fix this to use angular component
             templateUrl: './products/view-product.template.html'
         }).
+        when('/email', {
+            //@TODO Fix this to use angular component
+            template: '<email-send><email-send>'
+        }).
         otherwise('/');
     }
   ]);
