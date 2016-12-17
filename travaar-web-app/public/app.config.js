@@ -14,6 +14,10 @@ angular.
             //@TODO Fix this to use angular component
             templateUrl: './products/view-product.template.html'
         }).
+        when('/phones', {
+            //@TODO Fix this to use angular component
+            templateUrl: './phone-list/phone-list.template.html'
+        }).
         otherwise('/');
     }
   ]);

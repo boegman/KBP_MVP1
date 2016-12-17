@@ -1,5 +1,6 @@
 angular.module('products').
-    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject',function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject){
+    controller('productsCtrl',['$scope','$routeParams','$location','$firebaseArray','$firebaseObject','Email',
+    function( $scope, $routeParams, $location, $firebaseArray, $firebaseObject,Email){
 
         $scope.hotel_Id = '-KZ1tjKMBrimWj6k1pHb';
 
@@ -87,6 +88,14 @@ angular.module('products').
             });
 
         };
+
+        //Send Email
+        $scope.sendEmail = function(){
+          this.email = Email.query();
+          console.log("email sent!");
+        }
+
+        $scope.sendEmail();
 
 
 

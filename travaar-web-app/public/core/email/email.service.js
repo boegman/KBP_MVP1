@@ -1,15 +1,15 @@
-'use strict';
+  'use strict';
 
-angular.
-  module('core.email').
-  factory('Email', ['$resource',
-    function($resource) {
-      return $resource('phones/:phoneId.json', {}, {
-        query: {
-          method: 'PUT',
-          params: {phoneId: 'phones'},
-          isArray: true
-        }
-      });
-    }
-  ]);
+  angular.
+    module('core.email').
+    factory('Email', ['$resource',
+      function($resource) {
+        return $resource('products/:phoneId.json', {}, {
+          query: {
+            method: 'GET',
+            params: {phoneId: 'phones'},
+            isArray: true
+          }
+        });
+      }
+    ]);
