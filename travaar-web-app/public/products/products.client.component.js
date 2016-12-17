@@ -1,8 +1,8 @@
-//@TODO FIX: THIS DOESN'T WORK!!!!!!!
+//@TODO Use curly braces for component
 //FIX CONTROLLER TO USE NAME OF CONTROLLER AS A VARIABLE REFERENCE
 
 angular.module('productView').
-    component('productsView',[
+    component('productsView',{[
         templateUrl: './products/view-product.template.html',
         controller: ['$routeParams','$location', function($routeParams, $location){
             var self = this;
@@ -20,4 +20,4 @@ angular.module('productView').
                 self.prodId = $routeParam.productId;
             };
         }]
-    ]);
+    });
